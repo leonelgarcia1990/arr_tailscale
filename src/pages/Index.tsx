@@ -173,7 +173,16 @@ const Index = () => {
   };
 
   const handleReload = () => {
-    window.location.reload();
+    // Restaurar la IP por defecto
+    const defaultIp = "192.168.100.43";
+    setInputValue("");
+    setActiveIp(defaultIp);
+    localStorage.setItem("homelab-ip", defaultIp);
+    toast.success("Volviendo a IP local por defecto");
+    // Pequeño delay para que se vea el cambio antes de recargar
+    setTimeout(() => {
+      window.location.reload();
+    }, 500);
   };
 
   const handlePasteFromClipboard = async () => {
