@@ -100,7 +100,7 @@ const SERVICES = [
   {
     name: "AdGuard Home",
     description: "Bloqueador DNS",
-    port: "3000",
+    port: "8088",
     icon: Shield,
     color: "bg-tech-blue",
     protocol: "http",
