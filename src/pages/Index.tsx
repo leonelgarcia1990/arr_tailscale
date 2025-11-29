@@ -11,7 +11,9 @@ import {
   Heart, 
   Play, 
   Folder,
-  Shield
+  Shield,
+  Globe,
+  RefreshCw
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -105,6 +107,33 @@ const SERVICES = [
     color: "bg-tech-blue",
     protocol: "http",
     path: ""
+  },
+  {
+    name: "Transmission",
+    description: "Cliente Torrent",
+    port: "9091",
+    icon: Download,
+    color: "bg-tech-red",
+    protocol: "http",
+    path: ""
+  },
+  {
+    name: "Firefox",
+    description: "Navegador web",
+    port: "5058",
+    icon: Globe,
+    color: "bg-tech-orange",
+    protocol: "http",
+    path: ""
+  },
+  {
+    name: "WUD",
+    description: "Docker Updater",
+    port: "9090",
+    icon: RefreshCw,
+    color: "bg-tech-purple",
+    protocol: "http",
+    path: ""
   }
 ];
 
@@ -149,7 +178,7 @@ const Index = () => {
             </div>
           </div>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Acceso rápido a todos tus servicios. Ingresa tu dirección IP y conecta con tus aplicaciones.
+            IP local by default or Paste your Tailscale ip 
           </p>
         </div>
 
@@ -171,7 +200,6 @@ const Index = () => {
           </div>
           {!isValidIp && (
             <p className="mt-3 text-sm text-muted-foreground text-center">
-              Por favor ingresa una dirección IP para habilitar los servicios
             </p>
           )}
         </div>
@@ -194,7 +222,7 @@ const Index = () => {
 
         {/* Footer */}
         <div className="mt-12 text-center text-sm text-muted-foreground animate-in fade-in duration-700 delay-500">
-          <p>Haz clic en cualquier servicio para abrir en una nueva pestaña</p>
+          <p>Designed by LeoncioBlues - 2025 - Version 2.2</p>
         </div>
       </div>
     </div>
