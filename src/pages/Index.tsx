@@ -115,6 +115,11 @@ const Index = () => {
     const savedIp = localStorage.getItem("homelab-ip");
     if (savedIp) {
       setIpAddress(savedIp);
+    } else {
+      // Establecer IP por defecto
+      const defaultIp = "192.168.100.43";
+      setIpAddress(defaultIp);
+      localStorage.setItem("homelab-ip", defaultIp);
     }
   }, []);
 
