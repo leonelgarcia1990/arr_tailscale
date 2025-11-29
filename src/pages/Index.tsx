@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 import { ServiceCard } from "@/components/ServiceCard";
 import { 
   Film, 
@@ -170,6 +171,10 @@ const Index = () => {
     }
   };
 
+  const handleReload = () => {
+    window.location.reload();
+  };
+
   const isValidIp = activeIp.trim() !== "";
 
   return (
@@ -183,6 +188,15 @@ const Index = () => {
               <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-tech-blue bg-clip-text text-transparent">
                 Homelab Control Center
               </h1>
+              <Button
+                onClick={handleReload}
+                size="icon"
+                variant="ghost"
+                className="ml-2 hover:bg-primary/20 transition-colors"
+                title="Recargar página"
+              >
+                <RefreshCw className="h-5 w-5" />
+              </Button>
             </div>
           </div>
           <p className="text-muted-foreground max-w-2xl mx-auto"> 
