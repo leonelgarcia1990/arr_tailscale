@@ -21,70 +21,90 @@ const SERVICES = [
     description: "Gestión de películas",
     port: "7878",
     icon: Film,
-    color: "bg-tech-yellow"
+    color: "bg-tech-yellow",
+    protocol: "http",
+    path: ""
   },
   {
     name: "Sonarr",
     description: "Gestión de series",
     port: "8989",
     icon: Tv,
-    color: "bg-tech-blue"
+    color: "bg-tech-blue",
+    protocol: "http",
+    path: ""
   },
   {
     name: "Prowlarr",
     description: "Gestión de indexadores",
     port: "9696",
     icon: Radio,
-    color: "bg-tech-orange"
+    color: "bg-tech-orange",
+    protocol: "http",
+    path: ""
   },
   {
     name: "Bazarr",
     description: "Gestión de subtítulos",
     port: "6767",
     icon: Subtitles,
-    color: "bg-tech-green"
+    color: "bg-tech-green",
+    protocol: "http",
+    path: ""
   },
   {
     name: "qBittorrent",
     description: "Cliente Torrent",
     port: "8080",
     icon: Download,
-    color: "bg-tech-cyan"
+    color: "bg-tech-cyan",
+    protocol: "http",
+    path: ""
   },
   {
     name: "Portainer",
     description: "Gestión de Docker",
     port: "9443",
     icon: Container,
-    color: "bg-tech-purple"
+    color: "bg-tech-purple",
+    protocol: "https",
+    path: "/#!/home"
   },
   {
     name: "Jellyseerr",
     description: "Solicitudes de contenido",
     port: "5055",
     icon: Heart,
-    color: "bg-tech-pink"
+    color: "bg-tech-pink",
+    protocol: "http",
+    path: ""
   },
   {
     name: "Jellyfin",
     description: "Servidor multimedia",
     port: "8096",
     icon: Play,
-    color: "bg-tech-red"
+    color: "bg-tech-red",
+    protocol: "http",
+    path: ""
   },
   {
     name: "Filebrowser",
     description: "Explorador de archivos",
     port: "8081",
     icon: Folder,
-    color: "bg-tech-green"
+    color: "bg-tech-green",
+    protocol: "http",
+    path: ""
   },
   {
     name: "AdGuard Home",
     description: "Bloqueador DNS",
     port: "3000",
     icon: Shield,
-    color: "bg-tech-blue"
+    color: "bg-tech-blue",
+    protocol: "http",
+    path: ""
   }
 ];
 

@@ -9,6 +9,8 @@ interface ServiceCardProps {
   icon: LucideIcon;
   color: string;
   ipAddress: string;
+  protocol?: string;
+  path?: string;
 }
 
 export const ServiceCard = ({ 
@@ -17,13 +19,15 @@ export const ServiceCard = ({
   port, 
   icon: Icon, 
   color,
-  ipAddress 
+  ipAddress,
+  protocol = "http",
+  path = ""
 }: ServiceCardProps) => {
   const handleClick = () => {
     if (!ipAddress) {
       return;
     }
-    const url = `http://${ipAddress}:${port}`;
+    const url = `${protocol}://${ipAddress}:${port}${path}`;
     window.open(url, '_blank');
   };
 
