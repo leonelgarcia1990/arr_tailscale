@@ -138,31 +138,39 @@ const SERVICES = [
 ];
 
 const Index = () => {
-  const [ipAddress, setIpAddress] = useState("");
+  const [inputValue, setInputValue] = useState("");
+  const [activeIp, setActiveIp] = useState("192.168.100.43");
 
   useEffect(() => {
     const savedIp = localStorage.getItem("homelab-ip");
     if (savedIp) {
-      setIpAddress(savedIp);
+      setActiveIp(savedIp);
+      // No mostrar la IP en el input, dejarlo vacío
     } else {
-      // Establecer IP por defecto
+      // Establecer IP por defecto en el background
       const defaultIp = "192.168.100.43";
-      setIpAddress(defaultIp);
+      setActiveIp(defaultIp);
       localStorage.setItem("homelab-ip", defaultIp);
     }
   }, []);
 
   const handleIpChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    setIpAddress(value);
+    setInputValue(value);
     
-    if (value) {
+    if (value.trim()) {
+      setActiveIp(value);
       localStorage.setItem("homelab-ip", value);
       toast.success("Dirección IP guardada");
+    } else {
+      // Si borra el input, volver a la IP por defecto
+      const defaultIp = "192.168.100.43";
+      setActiveIp(defaultIp);
+      localStorage.setItem("homelab-ip", defaultIp);
     }
   };
 
-  const isValidIp = ipAddress.trim() !== "";
+  const isValidIp = activeIp.trim() !== "";
 
   return (
     <div className="min-h-screen bg-background p-4 md:p-8">
@@ -187,8 +195,8 @@ const Index = () => {
           <div className="relative">
             <Input
               type="text"
-              placeholder="Ingresa tu dirección IP (ej: 192.168.1.100)"
-              value={ipAddress}
+              placeholder="192.168.100.43 (local) - Pega tu IP de Tailscale aquí"
+              value={inputValue}
               onChange={handleIpChange}
               className="h-14 px-6 text-lg font-mono bg-card border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
             />
@@ -214,7 +222,7 @@ const Index = () => {
             >
               <ServiceCard
                 {...service}
-                ipAddress={ipAddress}
+                ipAddress={activeIp}
               />
             </div>
           ))}
