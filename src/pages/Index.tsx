@@ -14,7 +14,8 @@ import {
   Folder,
   Shield,
   Globe,
-  RefreshCw
+  RefreshCw,
+  Clipboard
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -175,6 +176,20 @@ const Index = () => {
     window.location.reload();
   };
 
+  const handlePasteFromClipboard = async () => {
+    try {
+      const text = await navigator.clipboard.readText();
+      if (text.trim()) {
+        setInputValue(text);
+        setActiveIp(text);
+        localStorage.setItem("homelab-ip", text);
+        toast.success("IP pegada desde el portapapeles");
+      }
+    } catch (err) {
+      toast.error("No se pudo acceder al portapapeles");
+    }
+  };
+
   const isValidIp = activeIp.trim() !== "";
 
   return (
@@ -182,23 +197,13 @@ const Index = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12 animate-in fade-in slide-in-from-top duration-700">
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="inline-block">
-              <div className="flex items-center gap-3 px-6 py-3 bg-card/50 backdrop-blur-sm border border-primary/20 rounded-full">
-                <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-tech-blue bg-clip-text text-transparent">
-                  Homelab Control Center
-                </h1>
-              </div>
+          <div className="inline-block mb-4">
+            <div className="flex items-center gap-3 px-6 py-3 bg-card/50 backdrop-blur-sm border border-primary/20 rounded-full">
+              <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-tech-blue bg-clip-text text-transparent">
+                Homelab Control Center
+              </h1>
             </div>
-            <Button
-              onClick={handleReload}
-              size="icon"
-              className="bg-card/50 backdrop-blur-sm border border-primary/20 hover:bg-primary/20 transition-colors rounded-full h-12 w-12"
-              title="Recargar página"
-            >
-              <RefreshCw className="h-5 w-5 text-foreground" />
-            </Button>
           </div>
           <p className="text-muted-foreground max-w-2xl mx-auto"> 
           </p>
@@ -206,19 +211,33 @@ const Index = () => {
 
         {/* IP Input */}
         <div className="max-w-2xl mx-auto mb-12 animate-in fade-in slide-in-from-bottom duration-700 delay-100">
-          <div className="relative">
-            <Input
-              type="text"
-              placeholder="192.168.100.43 by Deafault or Paste your Tailscale ip"
-              value={inputValue}
-              onChange={handleIpChange}
-              className="h-14 px-6 text-lg font-mono bg-card border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
-            />
-            {isValidIp && (
-              <div className="absolute right-4 top-1/2 -translate-y-1/2">
-                <div className="w-3 h-3 rounded-full bg-tech-green animate-pulse" />
-              </div>
-            )}
+          <div className="flex gap-2 items-center">
+            <div className="relative flex-1">
+              <Input
+                type="text"
+                placeholder="192.168.100.43 by Deafault or Paste your Tailscale ip"
+                value={inputValue}
+                onChange={handleIpChange}
+                className="h-14 px-6 pr-14 text-lg font-mono bg-card border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+              />
+              <Button
+                onClick={handlePasteFromClipboard}
+                size="icon"
+                variant="ghost"
+                className="absolute right-2 top-1/2 -translate-y-1/2 h-10 w-10 hover:bg-primary/20"
+                title="Pegar desde portapapeles"
+              >
+                <Clipboard className="h-4 w-4 text-muted-foreground" />
+              </Button>
+            </div>
+            <Button
+              onClick={handleReload}
+              size="icon"
+              className="bg-card/50 backdrop-blur-sm border border-primary/20 hover:bg-primary/20 transition-colors rounded-full h-14 w-14 flex-shrink-0"
+              title="Recargar página"
+            >
+              <RefreshCw className="h-5 w-5 text-foreground" />
+            </Button>
           </div>
           {!isValidIp && (
             <p className="mt-3 text-sm text-muted-foreground text-center">
