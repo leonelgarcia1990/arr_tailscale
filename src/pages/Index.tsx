@@ -197,7 +197,7 @@ const Index = () => {
               className="bg-card/50 backdrop-blur-sm border border-primary/20 hover:bg-primary/20 transition-colors rounded-full h-12 w-12"
               title="Recargar página"
             >
-              <RefreshCw className="h-5 w-5" />
+              <RefreshCw className="h-5 w-5 text-foreground" />
             </Button>
           </div>
           <p className="text-muted-foreground max-w-2xl mx-auto"> 
