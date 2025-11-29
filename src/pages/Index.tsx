@@ -120,7 +120,7 @@ const SERVICES = [
   {
     name: "Firefox",
     description: "Navegador web",
-    port: "5058",
+    port: "5800",
     icon: Globe,
     color: "bg-tech-orange",
     protocol: "http",
