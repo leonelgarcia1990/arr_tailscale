@@ -182,22 +182,23 @@ const Index = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12 animate-in fade-in slide-in-from-top duration-700">
-          <div className="inline-block mb-4">
-            <div className="flex items-center gap-3 px-6 py-3 bg-card/50 backdrop-blur-sm border border-primary/20 rounded-full">
-              <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-tech-blue bg-clip-text text-transparent">
-                Homelab Control Center
-              </h1>
-              <Button
-                onClick={handleReload}
-                size="icon"
-                variant="ghost"
-                className="ml-2 hover:bg-primary/20 transition-colors"
-                title="Recargar página"
-              >
-                <RefreshCw className="h-5 w-5" />
-              </Button>
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <div className="inline-block">
+              <div className="flex items-center gap-3 px-6 py-3 bg-card/50 backdrop-blur-sm border border-primary/20 rounded-full">
+                <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-tech-blue bg-clip-text text-transparent">
+                  Homelab Control Center
+                </h1>
+              </div>
             </div>
+            <Button
+              onClick={handleReload}
+              size="icon"
+              className="bg-card/50 backdrop-blur-sm border border-primary/20 hover:bg-primary/20 transition-colors rounded-full h-12 w-12"
+              title="Recargar página"
+            >
+              <RefreshCw className="h-5 w-5" />
+            </Button>
           </div>
           <p className="text-muted-foreground max-w-2xl mx-auto"> 
           </p>
