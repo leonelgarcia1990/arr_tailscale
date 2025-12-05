@@ -31,9 +31,18 @@ export const ServiceCard = ({
     window.open(url, '_blank');
   };
 
+  const handleAuxClick = (e: React.MouseEvent) => {
+    if (e.button === 1 && ipAddress) { // Botón del medio (scroll wheel click)
+      e.preventDefault();
+      const url = `${protocol}://${ipAddress}:${port}${path}`;
+      window.open(url, '_blank');
+    }
+  };
+
   return (
     <Card
       onClick={handleClick}
+      onAuxClick={handleAuxClick}
       className={cn(
         "group relative overflow-hidden cursor-pointer transition-all duration-300 hover:scale-105",
         "bg-card border-border hover:border-primary/50",
