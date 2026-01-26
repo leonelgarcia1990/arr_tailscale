@@ -20,16 +20,7 @@ import {
 import { toast } from "sonner";
 
 const SERVICES = [
-  {
-    name: "Radarr",
-    description: "Gestión de películas",
-    port: "7878",
-    icon: Film,
-    color: "bg-tech-yellow",
-    protocol: "http",
-    path: ""
-  },
-  {
+ {
     name: "Sonarr",
     description: "Gestión de series",
     port: "8989",
@@ -38,6 +29,18 @@ const SERVICES = [
     protocol: "http",
     path: ""
   },
+
+   {
+    name: "Jellyseerr",
+    description: "Solicitudes de contenido",
+    port: "5055",
+    icon: Heart,
+    color: "bg-tech-pink",
+    protocol: "http",
+    path: ""
+  },
+
+ 
   {
     name: "Prowlarr",
     description: "Gestión de indexadores",
@@ -65,24 +68,29 @@ const SERVICES = [
     protocol: "http",
     path: ""
   },
+
   {
-    name: "Portainer",
-    description: "Gestión de Docker",
-    port: "9443",
-    icon: Container,
-    color: "bg-tech-purple",
-    protocol: "https",
-    path: "/#!/home"
-  },
-  {
-    name: "Jellyseerr",
-    description: "Solicitudes de contenido",
-    port: "5055",
-    icon: Heart,
-    color: "bg-tech-pink",
+    name: "Filebrowser",
+    description: "Explorador de archivos",
+    port: "8081",
+    icon: Folder,
+    color: "bg-tech-green",
     protocol: "http",
     path: ""
   },
+
+  {
+    
+    name: "Radarr",
+    description: "Gestión de películas",
+    port: "7878",
+    icon: Film,
+    color: "bg-tech-yellow",
+    protocol: "http",
+    path: ""
+  },
+
+
   {
     name: "Jellyfin",
     description: "Servidor multimedia",
@@ -101,15 +109,17 @@ const SERVICES = [
     protocol: "http",
     path: ""
   },
+
   {
-    name: "AdGuard Home",
-    description: "Bloqueador DNS",
-    port: "8088",
-    icon: Shield,
-    color: "bg-tech-blue",
+    name: "Jellyfin",
+    description: "Servidor multimedia",
+    port: "8096",
+    icon: Play,
+    color: "bg-tech-red",
     protocol: "http",
     path: ""
   },
+  
   {
     name: "Transmission",
     description: "Cliente Torrent",
@@ -128,15 +138,17 @@ const SERVICES = [
     protocol: "http",
     path: ""
   },
-  {
-    name: "WUD",
-    description: "Docker Updater",
-    port: "9090",
-    icon: RefreshCw,
+
+   {
+    name: "Portainer",
+    description: "Gestión de Docker",
+    port: "9443",
+    icon: Container,
     color: "bg-tech-purple",
-    protocol: "http",
-    path: ""
-  }
+    protocol: "https",
+    path: "/#!/home"
+  },
+ 
 ];
 
 const Index = () => {
@@ -272,7 +284,7 @@ const Index = () => {
 
         {/* Footer */}
         <div className="mt-12 text-center text-sm text-muted-foreground animate-in fade-in duration-700 delay-500">
-          <p>Designed by LeoncioBlues - 2025 - Version 2.2</p>
+          <p>Designed by LeoncioBlues - 2025 - Version 2.2.1</p>
         </div>
       </div>
     </div>
