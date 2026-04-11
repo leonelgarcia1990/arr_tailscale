@@ -261,7 +261,7 @@ const Index = () => {
 
         {/* Footer */}
         <div className="mt-12 text-center text-sm text-muted-foreground animate-in fade-in duration-700 delay-500">
-          <p>Designed by LeoncioBlues - 2025 - Version 2.2.1</p>
+          <p>Designed by LeoncioBlues - Version 11 Abril 2026 </p>
         </div>
       </div>
     </div>
