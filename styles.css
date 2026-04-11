@@ -154,7 +154,7 @@ main {
 
 @media (max-width: 430px) {
   .page-shell {
-    min-height: 100dvh;
+    min-height: calc(100dvh - 200px);
     display: flex;
     flex-direction: column;
     padding: 0.5rem 0.55rem 0.7rem;
