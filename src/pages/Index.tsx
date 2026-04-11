@@ -40,25 +40,9 @@ const SERVICES = [
     path: ""
   },
 
+  
  
-  {
-    name: "Prowlarr",
-    description: "Gestión de indexadores",
-    port: "9696",
-    icon: Radio,
-    color: "bg-tech-orange",
-    protocol: "http",
-    path: ""
-  },
-  {
-    name: "Bazarr",
-    description: "Gestión de subtítulos",
-    port: "6767",
-    icon: Subtitles,
-    color: "bg-tech-green",
-    protocol: "http",
-    path: ""
-  },
+
   {
     name: "qBittorrent",
     description: "Cliente Torrent",
@@ -69,6 +53,18 @@ const SERVICES = [
     path: ""
   },
 
+   {
+    name: "Bazarr",
+    description: "Gestión de subtítulos",
+    port: "6767",
+    icon: Subtitles,
+    color: "bg-tech-green",
+    protocol: "http",
+    path: ""
+  },
+
+
+
   {
     name: "Filebrowser",
     description: "Explorador de archivos",
@@ -79,7 +75,7 @@ const SERVICES = [
     path: ""
   },
 
-  {
+ {
     
     name: "Radarr",
     description: "Gestión de películas",
@@ -90,36 +86,17 @@ const SERVICES = [
     path: ""
   },
 
-
-  {
-    name: "Jellyfin",
-    description: "Servidor multimedia",
-    port: "8096",
-    icon: Play,
-    color: "bg-tech-red",
+ {
+    name: "Prowlarr",
+    description: "Gestión de indexadores",
+    port: "9696",
+    icon: Radio,
+    color: "bg-tech-orange",
     protocol: "http",
     path: ""
   },
-  {
-    name: "Filebrowser",
-    description: "Explorador de archivos",
-    port: "8081",
-    icon: Folder,
-    color: "bg-tech-green",
-    protocol: "http",
-    path: ""
-  },
-
-  {
-    name: "Jellyfin",
-    description: "Servidor multimedia",
-    port: "8096",
-    icon: Play,
-    color: "bg-tech-red",
-    protocol: "http",
-    path: ""
-  },
-  
+ 
+ 
   {
     name: "Transmission",
     description: "Cliente Torrent",
