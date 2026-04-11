@@ -35,39 +35,36 @@ body {
 }
 
 .header {
-  text-align: center;
-  margin-bottom: 2.5rem;
-  animation: fade-up 0.6s ease both;
+  text-align: left;
+  margin-bottom: 1rem;
+  animation: fade-up 0.4s ease both;
 }
 
 .header-pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.7rem 1rem;
-  border-radius: 999px;
-  background: hsl(217 33% 17% / 0.55);
-  border: 1px solid hsl(189 94% 43% / 0.2);
-  backdrop-filter: blur(4px);
+  gap: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid hsl(217 33% 25% / 0.7);
+  border-radius: 8px;
+  background: hsl(217 33% 17% / 0.35);
 }
 
 .header h1 {
   margin: 0;
-  font-size: clamp(1.4rem, 2vw, 2rem);
-  font-weight: 700;
-  background: linear-gradient(90deg, var(--primary), var(--tech-blue));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  font-size: clamp(0.95rem, 1.8vw, 1.2rem);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--foreground);
+  opacity: 0.95;
 }
 
-.status-dot {
-  width: 0.55rem;
-  height: 0.55rem;
-  border-radius: 50%;
-  background: var(--primary);
-  box-shadow: 0 0 0 0 hsl(189 94% 43% / 0.6);
-  animation: pulse 1.8s infinite;
+.header-version {
+  font-size: 0.72rem;
+  color: var(--muted-foreground);
+  border-left: 1px solid hsl(217 33% 25% / 0.9);
+  padding-left: 0.45rem;
+  letter-spacing: 0.03em;
 }
 
 .ip-section {
@@ -140,14 +137,14 @@ body {
 
 .cards-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem;
   animation: fade-up 0.7s ease both;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 359px) {
   .cards-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
   }
 }
 
