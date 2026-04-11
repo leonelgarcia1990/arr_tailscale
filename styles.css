@@ -161,7 +161,7 @@ main {
   }
 
   .header {
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.65rem;
   }
 
   .header-pill {
@@ -180,7 +180,7 @@ main {
   }
 
   .ip-section {
-    margin: 0 auto 0.35rem;
+    margin: 0 auto 0.75rem;
   }
 
   .ip-controls {
@@ -188,23 +188,23 @@ main {
   }
 
   #ipInput {
-    height: 38px;
-    padding: 0 58px 0 10px;
-    font-size: 0.82rem;
-    border-radius: 9px;
+    height: 42px;
+    padding: 0 62px 0 12px;
+    font-size: 0.9rem;
+    border-radius: 10px;
   }
 
   .icon-btn {
-    height: 28px;
-    padding: 0 7px;
-    font-size: 0.68rem;
+    height: 34px;
+    padding: 0 10px;
+    font-size: 0.74rem;
   }
 
   .round-btn {
-    height: 38px;
-    min-width: 38px;
-    padding: 0 8px;
-    font-size: 0.68rem;
+    height: 42px;
+    min-width: 42px;
+    padding: 0 10px;
+    font-size: 0.72rem;
   }
 
   .cards-grid {
@@ -224,7 +224,7 @@ main {
   }
 
   .card-inner {
-    padding: 0.42rem;
+    padding: 0.3rem 0.34rem;
   }
 
   .card-head {
@@ -232,10 +232,10 @@ main {
   }
 
   .icon-box {
-    width: 26px;
-    height: 26px;
+    width: 22px;
+    height: 22px;
     border-radius: 6px;
-    font-size: 0.7rem;
+    font-size: 0.62rem;
   }
 
   .port-pill {
