@@ -1,0 +1,295 @@
+:root {
+  --background: hsl(222 47% 11%);
+  --foreground: hsl(210 40% 98%);
+  --card: hsl(217 33% 17%);
+  --muted-foreground: hsl(215 20% 65%);
+  --border: hsl(217 33% 25%);
+  --primary: hsl(189 94% 43%);
+
+  --tech-cyan: hsl(189 94% 43%);
+  --tech-purple: hsl(271 81% 56%);
+  --tech-green: hsl(142 76% 36%);
+  --tech-orange: hsl(24 95% 53%);
+  --tech-red: hsl(0 84% 60%);
+  --tech-blue: hsl(217 91% 60%);
+  --tech-yellow: hsl(48 96% 53%);
+  --tech-pink: hsl(330 81% 60%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(1000px 500px at 50% -120px, hsl(217 91% 60% / 0.2), transparent), var(--background);
+  color: var(--foreground);
+  font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.page-shell {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  animation: fade-up 0.6s ease both;
+}
+
+.header-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  background: hsl(217 33% 17% / 0.55);
+  border: 1px solid hsl(189 94% 43% / 0.2);
+  backdrop-filter: blur(4px);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--primary), var(--tech-blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.status-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 0 0 hsl(189 94% 43% / 0.6);
+  animation: pulse 1.8s infinite;
+}
+
+.ip-section {
+  max-width: 760px;
+  margin: 0 auto 2.5rem;
+  animation: fade-up 0.65s ease both;
+}
+
+.ip-controls {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.ip-input-wrap {
+  flex: 1;
+  position: relative;
+}
+
+#ipInput {
+  width: 100%;
+  height: 54px;
+  padding: 0 80px 0 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--foreground);
+  font-size: 1rem;
+}
+
+#ipInput:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px hsl(189 94% 43% / 0.18);
+}
+
+.icon-btn {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 38px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted-foreground);
+  cursor: pointer;
+}
+
+.icon-btn:hover {
+  background: hsl(189 94% 43% / 0.18);
+  color: var(--foreground);
+}
+
+.round-btn {
+  height: 54px;
+  min-width: 54px;
+  border-radius: 999px;
+  border: 1px solid hsl(189 94% 43% / 0.2);
+  background: hsl(217 33% 17% / 0.55);
+  color: var(--foreground);
+  cursor: pointer;
+  padding: 0 14px;
+}
+
+.round-btn:hover {
+  background: hsl(189 94% 43% / 0.18);
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  animation: fade-up 0.7s ease both;
+}
+
+@media (min-width: 768px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .cards-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  .cards-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  cursor: pointer;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: hsl(189 94% 43% / 0.5);
+  box-shadow: 0 0 28px hsl(189 94% 43% / 0.28);
+}
+
+.card.disabled,
+.card.disabled:hover {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.card-inner {
+  position: relative;
+  z-index: 2;
+  padding: 1rem;
+}
+
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.9rem;
+}
+
+.icon-box {
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  color: hsl(222 47% 11%);
+  font-weight: 800;
+}
+
+.port-pill {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.72rem;
+  color: var(--muted-foreground);
+  background: hsl(217 33% 20%);
+  border-radius: 8px;
+  padding: 0.2rem 0.5rem;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 1.04rem;
+  font-weight: 700;
+}
+
+.card p {
+  margin: 0.25rem 0 0;
+  color: var(--muted-foreground);
+  font-size: 0.88rem;
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.card:hover .card-overlay {
+  opacity: 0.1;
+}
+
+.footer {
+  margin-top: 2.4rem;
+  text-align: center;
+  font-size: 0.84rem;
+  color: var(--muted-foreground);
+}
+
+.toast-container {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  display: grid;
+  gap: 0.5rem;
+  z-index: 20;
+}
+
+.toast {
+  border: 1px solid var(--border);
+  background: hsl(217 33% 17% / 0.95);
+  color: var(--foreground);
+  border-radius: 10px;
+  padding: 0.6rem 0.8rem;
+  transform: translateY(8px);
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.toast.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.bg-tech-blue { background: var(--tech-blue); }
+.bg-tech-pink { background: var(--tech-pink); }
+.bg-tech-orange { background: var(--tech-orange); }
+.bg-tech-green { background: var(--tech-green); }
+.bg-tech-cyan { background: var(--tech-cyan); }
+.bg-tech-yellow { background: var(--tech-yellow); }
+.bg-tech-red { background: var(--tech-red); }
+.bg-tech-purple { background: var(--tech-purple); }
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 hsl(189 94% 43% / 0.6); }
+  70% { box-shadow: 0 0 0 10px hsl(189 94% 43% / 0); }
+  100% { box-shadow: 0 0 0 0 hsl(189 94% 43% / 0); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}

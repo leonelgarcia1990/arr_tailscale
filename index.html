@@ -1,24 +1,49 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Homelab Control Center</title>
-    <meta name="description" content="Centro de control para gestionar todos tus servicios homelab desde una interfaz unificada" />
-    <meta name="author" content="Homelab Admin" />
-
-    <meta property="og:title" content="Homelab Control Center" />
-    <meta property="og:description" content="Centro de control para gestionar todos tus servicios homelab" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@Lovable" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta name="description" content="Centro de control para gestionar servicios homelab desde una interfaz unificada" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <div class="page-shell">
+      <header class="header">
+        <div class="header-pill">
+          <span class="status-dot" aria-hidden="true"></span>
+          <h1>Homelab Control Center</h1>
+        </div>
+      </header>
+
+      <section class="ip-section">
+        <div class="ip-controls">
+          <div class="ip-input-wrap">
+            <input
+              type="text"
+              id="ipInput"
+              placeholder="192.168.100.43 by Deafault or Paste your Tailscale ip"
+              autocomplete="off"
+              spellcheck="false"
+            />
+            <button id="pasteBtn" class="icon-btn" type="button" title="Pegar desde portapapeles">Paste</button>
+          </div>
+          <button id="resetBtn" class="round-btn" type="button" title="Recargar pagina">Reset</button>
+        </div>
+      </section>
+
+      <main>
+        <section id="cardsGrid" class="cards-grid" aria-label="Servicios"></section>
+      </main>
+
+      <footer class="footer">
+        Designed by LeoncioBlues - Version 11 Abril 2026
+      </footer>
+    </div>
+
+    <div id="toastContainer" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+    <script src="script.js"></script>
   </body>
 </html>
