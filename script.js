@@ -134,9 +134,9 @@ function initInput() {
 }
 
 function initButtons() {
-  pasteBtn.addEventListener("click", function () {
+  function pasteFromClipboard() {
     if (!navigator.clipboard || !navigator.clipboard.readText) {
-      showToast("No se pudo acceder al portapapeles");
+      showToast("Safari no habilito portapapeles");
       return;
     }
 
@@ -155,8 +155,14 @@ function initButtons() {
         syncCardAvailability();
       })
       .catch(function () {
-        showToast("No se pudo acceder al portapapeles");
+        showToast("Permiti acceso al portapapeles en Safari");
       });
+  }
+
+  pasteBtn.addEventListener("click", pasteFromClipboard);
+  pasteBtn.addEventListener("touchend", function (event) {
+    event.preventDefault();
+    pasteFromClipboard();
   });
 
   resetBtn.addEventListener("click", function () {
