@@ -10,7 +10,9 @@ const SERVICES = [
   { name: "Prowlarr", description: "Gestion de indexadores", port: "9696", color: "bg-tech-orange", protocol: "http", path: "", icon: "PR" },
   { name: "Transmission", description: "Cliente Torrent", port: "9091", color: "bg-tech-red", protocol: "http", path: "", icon: "TR" },
   { name: "Firefox", description: "Navegador web", port: "5800", color: "bg-tech-orange", protocol: "http", path: "", icon: "FX" },
-  { name: "Portainer", description: "Gestion de Docker", port: "9443", color: "bg-tech-purple", protocol: "https", path: "/#!/home", icon: "PT" }
+  { name: "Portainer", description: "Gestion de Docker", port: "9443", color: "bg-tech-purple", protocol: "https", path: "/#!/home", icon: "PT" },
+  { name: "WUD", description: "Keep your containers up-to-date!", port: "9090", color: "bg-tech-green", protocol: "http", path: "", icon: "WU" },
+  { name: "rAudio", description: "Reproductor de audio local", host: "raudio.local", color: "bg-tech-cyan", protocol: "http", path: "", icon: "RA" }
 ];
 
 const ipInput = document.getElementById("ipInput");
@@ -60,7 +62,9 @@ function isValidIp() {
 }
 
 function getServiceUrl(service) {
-  return service.protocol + "://" + state.activeIp + ":" + service.port + service.path;
+  const targetHost = service.host || state.activeIp;
+  const targetPort = service.port ? ":" + service.port : "";
+  return service.protocol + "://" + targetHost + targetPort + service.path;
 }
 
 function openService(service) {
@@ -71,12 +75,14 @@ function openService(service) {
 }
 
 function cardTemplate(service, index) {
+  const endpointLabel = service.host || (service.port ? ":" + service.port : "");
+
   return (
     '<article class="card" data-index="' + index + '" role="button" tabindex="0">' +
       '<div class="card-inner">' +
         '<div class="card-head">' +
           '<div class="icon-box ' + service.color + '">' + service.icon + '</div>' +
-          '<div class="port-pill">:' + service.port + '</div>' +
+          '<div class="port-pill">' + endpointLabel + '</div>' +
         '</div>' +
         '<h3>' + service.name + '</h3>' +
         '<p>' + service.description + '</p>' +
