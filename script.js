@@ -8,6 +8,7 @@ const SERVICES = [
   { name: "Filebrowser", description: "Explorador de archivos", port: "8081", color: "bg-tech-green", protocol: "http", path: "", icon: "FB" },
   { name: "Radarr", description: "Gestion de peliculas", port: "7878", color: "bg-tech-yellow", protocol: "http", path: "", icon: "RD" },
   { name: "Prowlarr", description: "Gestion de indexadores", port: "9696", color: "bg-tech-orange", protocol: "http", path: "", icon: "PR" },
+  { name: "Jelifyn", description: "Gestor multimedia", port: "8096", color: "bg-tech-cyan", protocol: "http", path: "", icon: "JF" },
   { name: "Transmission", description: "Cliente Torrent", port: "9091", color: "bg-tech-red", protocol: "http", path: "", icon: "TR" },
   { name: "Firefox", description: "Navegador web", port: "5800", color: "bg-tech-orange", protocol: "http", path: "", icon: "FX" },
   { name: "Portainer", description: "Gestion de Docker", port: "9443", color: "bg-tech-purple", protocol: "https", path: "/#!/home", icon: "PT" },
