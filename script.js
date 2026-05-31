@@ -10,7 +10,7 @@ const SERVICES = [
   { name: "Prowlarr", description: "Gestion de indexadores", port: "9696", color: "bg-tech-orange", protocol: "http", path: "", icon: "PR" },
   { name: "Jelifyn", description: "Gestor multimedia", port: "8096", color: "bg-tech-cyan", protocol: "http", path: "", icon: "JF" },
   { name: "Transmission", description: "Cliente Torrent", port: "9091", color: "bg-tech-red", protocol: "http", path: "", icon: "TR" },
-  { name: "Firefox", description: "Navegador web", port: "5800", color: "bg-tech-orange", protocol: "http", path: "", icon: "FX" },
+  { name: "Chromium", description: "Navegador web", port: "3001", color: "bg-tech-orange", protocol: "http", path: "", icon: "CR" },
   { name: "Portainer", description: "Gestion de Docker", port: "9443", color: "bg-tech-purple", protocol: "https", path: "/#!/home", icon: "PT" },
   { name: "WUD", description: "Keep your containers up-to-date!", port: "9090", color: "bg-tech-green", protocol: "http", path: "", icon: "WU" },
   { name: "rAudio", description: "Reproductor de audio local", host: "raudio.local", color: "bg-tech-cyan", protocol: "http", path: "", icon: "RA" }
