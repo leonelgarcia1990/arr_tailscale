@@ -2,13 +2,13 @@ const DEFAULT_IP = "192.168.100.43";
 
 const SERVICES = [
   { name: "Sonarr", description: "Gestion de series", port: "8989", color: "bg-tech-blue", protocol: "http", path: "", icon: "TV" },
-  { name: "Jellyseerr", description: "Solicitudes de contenido", port: "5055", color: "bg-tech-pink", protocol: "http", path: "", icon: "JS" },
+  { name: "Seerr", description: "Solicitudes de contenido", port: "5055", color: "bg-tech-pink", protocol: "http", path: "", icon: "JS" },
   { name: "qBittorrent", description: "Cliente Torrent", port: "8080", color: "bg-tech-cyan", protocol: "http", path: "", icon: "QB" },
   { name: "Bazarr", description: "Gestion de subtitulos", port: "6767", color: "bg-tech-green", protocol: "http", path: "", icon: "BZ" },
   { name: "Filebrowser", description: "Explorador de archivos", port: "8081", color: "bg-tech-green", protocol: "http", path: "", icon: "FB" },
   { name: "Radarr", description: "Gestion de peliculas", port: "7878", color: "bg-tech-yellow", protocol: "http", path: "", icon: "RD" },
   { name: "Prowlarr", description: "Gestion de indexadores", port: "9696", color: "bg-tech-orange", protocol: "http", path: "", icon: "PR" },
-  { name: "Jelifyn", description: "Gestor multimedia", port: "8096", color: "bg-tech-cyan", protocol: "http", path: "", icon: "JF" },
+  { name: "Jellyfin", description: "Gestor multimedia", port: "8096", color: "bg-tech-cyan", protocol: "http", path: "", icon: "JF" },
   { name: "Transmission", description: "Cliente Torrent", port: "9091", color: "bg-tech-red", protocol: "http", path: "", icon: "TR" },
   { name: "Chromium", description: "Navegador web", port: "3001", color: "bg-tech-orange", protocol: "https", path: "", icon: "CR" },
   { name: "Portainer", description: "Gestion de Docker", port: "9443", color: "bg-tech-purple", protocol: "https", path: "/#!/home", icon: "PT" },
